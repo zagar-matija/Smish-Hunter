@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Smish Hunter</string>
+
+    <string name="button_reports">Reports</string>
+    <string name="button_check_link">Check a link</string>
+    <string name="button_about">About</string>
 </resources>
