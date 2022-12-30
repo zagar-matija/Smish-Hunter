@@ -2,6 +2,14 @@
     <string name="app_name">Smish Hunter</string>
 
     <string name="button_reports">Reports</string>
-    <string name="button_check_link">Check a link</string>
+    <string name="button_check_a_link">Check a link</string>
     <string name="button_about">About</string>
+    <string name="button_check_link">Check link</string>
+
+    <string name="title_reports">Reports</string>
+
+    <string name="text_enter_link">Enter your link here</string>
+
+    <string name="description_settings_button">Settings</string>
+    <string name="description_back_button">Back</string>
 </resources>
