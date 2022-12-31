@@ -47,7 +47,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/buttonBackLinkChecker"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
