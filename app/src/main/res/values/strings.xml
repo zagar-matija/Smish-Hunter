@@ -8,11 +8,16 @@
     <string name="button_check_link">Check link</string>
 
     <string name="title_reports">Reports</string>
+    <string name="title_settings">Settings</string>
 
     <string name="text_enter_link">Enter your link here</string>
+    <string name="text_setting_1">Placeholder setting 1</string>
+    <string name="text_setting_2">Placeholder setting 2</string>
+    <string name="text_setting_3">Placeholder setting 3</string>
 
     <string name="description_settings_button">Settings</string>
     <string name="description_back_button">Back</string>
+    <string name="description_danger_image">Dangerous message</string>
 
 
     <string name="about_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus laoreet enim at metus accumsan aliquam. Proin eget sapien sit amet sem elementum imperdiet non in nisi. Nulla pulvinar ex id lorem rutrum ultrices. Nullam bibendum nibh ut nunc mattis convallis. Donec interdum ut erat ac accumsan. Sed imperdiet posuere commodo. Aenean sollicitudin felis et ipsum sollicitudin lacinia. Donec feugiat arcu non mi faucibus consectetur. Morbi aliquam placerat ipsum eu porta. Suspendisse faucibus sed ante eleifend consectetur. Cras eget ex sed velit aliquet pharetra. Sed nibh mi, cursus at quam a, pharetra fermentum neque. Vivamus maximus porttitor mi eget fermentum.
@@ -24,4 +29,5 @@ Praesent consectetur augue metus, scelerisque tincidunt libero accumsan id. Done
 Nam dictum elit mauris, vel sodales enim tristique varius. Quisque vitae neque vitae lacus tincidunt eleifend ac vel tellus. Donec semper in urna ut consequat. Vivamus at venenatis libero, ac convallis nisi. Duis sodales dictum justo, sit amet pharetra diam vehicula eu. Aliquam lorem ante, mollis sit amet quam at, dapibus placerat dolor. Morbi et elit ligula.
 
 Praesent efficitur orci pharetra mauris rhoncus, id imperdiet ex gravida. In eget imperdiet orci. Morbi interdum, lorem quis ultrices volutpat, augue nisi ullamcorper augue, vel semper quam ipsum vitae quam. Donec et nibh nec risus placerat blandit. Sed tincidunt elit a nulla mattis, sit amet semper mi elementum. Duis condimentum, orci a pretium iaculis, leo odio ullamcorper arcu, ultrices elementum risus quam ac ligula. Suspendisse leo magna, sodales ut placerat ac, ornare quis neque. Nunc eleifend rhoncus finibus. Integer sed aliquet neque. Nullam fringilla nunc quis libero condimentum interdum. Aliquam sit amet gravida purus. Morbi accumsan lorem quis mauris condimentum, gravida pretium mauris auctor. Sed at ante vestibulum, sodales odio cursus, faucibus diam.</string>
+
 </resources>

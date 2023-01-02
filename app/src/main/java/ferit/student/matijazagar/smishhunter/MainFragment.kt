@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
@@ -20,7 +21,6 @@ class MainFragment : Fragment() {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_main, container, false)
 
-
         view?.findViewById<Button>(R.id.buttonReports)?.setOnClickListener {
             val reportsFragment = ReportsFragment()
             val fragmentTransaction: FragmentTransaction? = activity?.supportFragmentManager?.beginTransaction()
@@ -29,11 +29,9 @@ class MainFragment : Fragment() {
                 ?.addToBackStack(null)
                 ?.commit()
         }
-
         view?.findViewById<Button>(R.id.buttonAbout)?.setOnClickListener {
             createAboutView()
         }
-
         view?.findViewById<Button>(R.id.buttonCheckLink)?.setOnClickListener {
             val checkLinkFragment = LinkCheckerFragment()
             val fragmentTransaction : FragmentTransaction? = activity?.supportFragmentManager?.beginTransaction()
@@ -42,6 +40,15 @@ class MainFragment : Fragment() {
                 ?.addToBackStack(null)
                 ?.commit()
         }
+        view?.findViewById<ImageButton>(R.id.buttonSettingsMain)?.setOnClickListener {
+            val settingsFragment = SettingsFragment()
+            val fragmentTransaction : FragmentTransaction? = activity?.supportFragmentManager?.beginTransaction()
+            fragmentTransaction
+                ?.replace(R.id.fragmentContainerView, settingsFragment)
+                ?.addToBackStack(null)
+                ?.commit()
+        }
+
         return view
 
     }
