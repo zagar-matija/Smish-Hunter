@@ -7,7 +7,7 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarSettings"
-        android:layout_width="409dp"
+        android:layout_width="0dp"
         android:layout_height="60dp"
         android:background="#7057A139"
         android:minHeight="?attr/actionBarSize"
@@ -44,30 +44,16 @@
 
     <TextView
         android:id="@+id/textViewSetting1"
-        android:layout_width="312dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="@string/text_setting_1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbarSettings" />
 
-    <Switch
-        android:id="@+id/switchSetting1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="-10dp"
-        android:checked="true"
-        android:minHeight="48dp"
-        android:scaleX="1.5"
-        android:scaleY="1.5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textViewSetting1"
-        app:layout_constraintTop_toTopOf="@+id/textViewSetting1"
-        tools:ignore="UseSwitchCompatOrMaterialXml,DuplicateSpeakableTextCheck" />
-
     <TextView
         android:id="@+id/textViewSetting2"
-        android:layout_width="312dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:text="@string/text_setting_2"
@@ -84,18 +70,25 @@
         android:scaleX="1.5"
         android:scaleY="1.5"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.931"
         app:layout_constraintStart_toEndOf="@+id/textViewSetting2"
         app:layout_constraintTop_toTopOf="@+id/textViewSetting2"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
-    <TextView
-        android:id="@+id/textViewSetting3"
-        android:layout_width="312dp"
+    <Switch
+        android:id="@+id/switchSetting1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="@string/text_setting_3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewSetting2" />
+        android:layout_marginTop="-10dp"
+        android:checked="true"
+        android:minHeight="48dp"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.931"
+        app:layout_constraintStart_toEndOf="@+id/textViewSetting1"
+        app:layout_constraintTop_toTopOf="@+id/textViewSetting1"
+        tools:ignore="UseSwitchCompatOrMaterialXml,DuplicateSpeakableTextCheck" />
 
     <Switch
         android:id="@+id/switchSetting3"
@@ -107,8 +100,18 @@
         android:scaleX="1.5"
         android:scaleY="1.5"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.931"
         app:layout_constraintStart_toEndOf="@+id/textViewSetting3"
         app:layout_constraintTop_toTopOf="@+id/textViewSetting3"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <TextView
+        android:id="@+id/textViewSetting3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/text_setting_3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSetting2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

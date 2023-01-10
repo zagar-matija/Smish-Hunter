@@ -23,9 +23,9 @@ class ReportsFragment : Fragment() {
 
         val recyclerView=view.findViewById<RecyclerView>(R.id.recyclerViewReports)
 
-        val placeholderReports : ArrayList<Report> = getData()
+        val reports : ArrayList<Report> = getData()
 
-        val recyclerAdapter = ReportsRecyclerAdapter(placeholderReports)
+        val recyclerAdapter = ReportsRecyclerAdapter(reports)
         recyclerView.adapter=recyclerAdapter
         recyclerView.layoutManager = LinearLayoutManager(context)
 
