@@ -2,6 +2,9 @@
     <string name="app_name">Smish Hunter</string>
     <string name="version">0.1</string>
 
+    <string name="json_file_path">/json/reports.json</string>
+
+
     <string name="button_reports">Reports</string>
     <string name="button_check_a_link">Check a link</string>
     <string name="button_about">About</string>

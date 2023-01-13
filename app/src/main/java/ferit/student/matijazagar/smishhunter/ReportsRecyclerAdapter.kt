@@ -31,7 +31,7 @@ class ReportsRecyclerAdapter(private val dataSet: ArrayList<Report>)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.textViewTitle.text = dataSet[position].title
+        holder.textViewTitle.text = dataSet[position].sender
         holder.textViewContent.text = dataSet[position].content
         holder.textViewRating.text = dataSet[position].rating
     }

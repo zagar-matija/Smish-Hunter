@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.provider.Telephony
-import android.widget.Toast
+import android.util.Log
 
 
 class SMSReceiver : BroadcastReceiver() {
@@ -14,6 +14,10 @@ class SMSReceiver : BroadcastReceiver() {
 
         val extractMessages = Telephony.Sms.Intents.getMessagesFromIntent(intent)
         extractMessages.forEach { smsMessage ->
-                Toast.makeText(context,smsMessage.displayMessageBody,Toast.LENGTH_LONG).show()}
+            SMSChecker.handleSMS(context, smsMessage)}
+        extractMessages.forEach { smsMessage ->
+            Log.d("SMSReceiver", smsMessage.displayMessageBody)}
+
+
     }
 }

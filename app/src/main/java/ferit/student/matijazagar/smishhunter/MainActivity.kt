@@ -1,7 +1,6 @@
 package ferit.student.matijazagar.smishhunter
 
 import android.Manifest
-import android.content.IntentFilter
 import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -13,8 +12,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val smsReceiver = SMSReceiver()
-        registerReceiver(smsReceiver, IntentFilter("android.provider.Telephony.SMS_RECEIVED"))
+        //val smsReceiver = SMSReceiver()
+        //registerReceiver(smsReceiver, IntentFilter("android.provider.Telephony.SMS_RECEIVED"))
 
         requestSmsPermission()
     }

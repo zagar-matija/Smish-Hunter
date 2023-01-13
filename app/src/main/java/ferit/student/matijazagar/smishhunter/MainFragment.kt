@@ -21,6 +21,8 @@ class MainFragment : Fragment() {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_main, container, false)
 
+
+
         view?.findViewById<Button>(R.id.buttonReports)?.setOnClickListener {
             val reportsFragment = ReportsFragment()
             val fragmentTransaction: FragmentTransaction? = activity?.supportFragmentManager?.beginTransaction()
