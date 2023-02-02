@@ -39,4 +39,15 @@ class ReportsRecyclerAdapter(private val dataSet: ArrayList<Report>)
     override fun getItemCount(): Int {
         return dataSet.size
     }
+
+    fun clear() {
+        dataSet.clear()
+        notifyDataSetChanged()
+    }
+
+    // Add a list of items -- change to type used
+    fun addAll(reports: ArrayList<Report>) {
+        dataSet.addAll(reports)
+        notifyDataSetChanged()
+    }
 }

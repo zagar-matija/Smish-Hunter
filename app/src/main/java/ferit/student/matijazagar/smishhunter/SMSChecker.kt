@@ -1,12 +1,15 @@
 package ferit.student.matijazagar.smishhunter
 
 import android.content.Context
+import android.os.Build
 import android.telephony.SmsMessage
+import androidx.annotation.RequiresApi
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.File
 import java.io.IOException
-import kotlin.random.Random
+import java.util.*
+import kotlin.collections.ArrayList
 
 
 object SMSChecker {
@@ -15,21 +18,39 @@ object SMSChecker {
     private const val dirName  = "json"
 
 
-    fun handleSMS(context: Context,sms : SmsMessage){
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun handleSMS(context: Context, sms : SmsMessage){
         val text = sms.displayMessageBody
         val sender = sms.originatingAddress
-        val rating = Random(5).nextInt(10).toString() + "/10"
-        val explanation = "Explanation as to why"
+        var rating = "1/10"
+        var explanation = "Harmless message"
+
+        val links = URLAnalyser.extractURLs(sms.displayMessageBody)
+
+        links.forEach {
+            val analysis = URLAnalyser.getLinkAnalysis(it)
+
+            if(analysis.data.attributes.last_analysis_stats.malicious>=3){
+                explanation = "Message contains a malicious link."
+                rating = "10/10"
+            }
+            else if(analysis.data.attributes.last_analysis_stats.suspicious>=3){
+                explanation = "Message contains a suspicious link."
+                rating = "7/10"
+            }
+        }
+
 
         val report = Report(sender,text,rating,explanation)
 
         val jsonString = readFileData(context)
 
         val listReportType = object : TypeToken<ArrayList<Report>>() {}.type
-        var reports = Gson().fromJson<ArrayList<Report>>(jsonString,listReportType)
-        if(reports.isNullOrEmpty())
-            reports = ArrayList()
+        val reports = ArrayList<Report>()
         reports.add(report)
+        reports.addAll(Gson().fromJson<ArrayList<Report>>(jsonString,listReportType))
+
+
 
         var newJsonString = ""
         try{
@@ -40,7 +61,6 @@ object SMSChecker {
         }
 
         writeFileData(context,newJsonString)
-
 
 
     }
@@ -60,5 +80,7 @@ object SMSChecker {
         file.createNewFile()
         file.outputStream().write(json.toByteArray())
     }
+
+
 }
 

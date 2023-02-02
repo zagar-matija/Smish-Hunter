@@ -17,7 +17,7 @@ import java.io.File
 class ReportsFragment : Fragment() {
     private val fileName = "reports.json"
     private val dirName  = "json"
-    
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -28,13 +28,20 @@ class ReportsFragment : Fragment() {
 
         val recyclerView=view.findViewById<RecyclerView>(R.id.recyclerViewReports)
 
-        val reports : ArrayList<Report> = getReportsFromFile()
+        var reports : ArrayList<Report> = getReportsFromFile()
 
 
         val recyclerAdapter = ReportsRecyclerAdapter(reports)
         recyclerView.adapter=recyclerAdapter
         recyclerView.layoutManager = LinearLayoutManager(context)
 
+        val swipeLayout = view.findViewById<androidx.swiperefreshlayout.widget.SwipeRefreshLayout>(R.id.swipeContainer)
+        swipeLayout.setOnRefreshListener {
+            reports = getReportsFromFile()
+            recyclerAdapter.clear()
+            recyclerAdapter.addAll(reports)
+            swipeLayout.isRefreshing = false
+        }
         view.findViewById<ImageButton>(R.id.buttonBackReports).setOnClickListener {
 
             activity?.supportFragmentManager?.popBackStackImmediate()
@@ -59,5 +66,6 @@ class ReportsFragment : Fragment() {
         Log.d("read JSON reports", jsonString)
         return reports
     }
-
 }
+
+//TODO add clear all messages with alertdialog confirmation
