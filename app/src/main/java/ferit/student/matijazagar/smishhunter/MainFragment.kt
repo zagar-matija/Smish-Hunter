@@ -61,8 +61,6 @@ class MainFragment : Fragment() {
             .permitAll().build()
         StrictMode.setThreadPolicy(policy)
 
-        val encodedString: String = Base64.getEncoder().encodeToString("http://google.com".toByteArray())
-        Log.d("base64 encode",encodedString)
 
         return view
 

@@ -34,19 +34,18 @@ class ReportsRecyclerAdapter(private val dataSet: ArrayList<Report>, val context
         return ViewHolder(view)
     }
 
-    @SuppressLint("UseCompatLoadingForDrawables")
+    @SuppressLint("UseCompatLoadingForDrawables", "SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
         holder.textViewTitle.text = dataSet[position].sender
         holder.textViewContent.text = dataSet[position].content
-        holder.textViewRating.text = dataSet[position].rating
+        holder.textViewRating.text = "${dataSet[position].rating}/10"
 
-        if(dataSet[position].rating == "10/10")
-            holder.icon.setImageDrawable(context.resources.getDrawable(R.drawable.ic_report_malicious_24,context.theme))
-        else if ( dataSet[position].rating == "7/10")
-            holder.icon.setImageDrawable(context.resources.getDrawable(R.drawable.ic_report_suspicious_24,context.theme))
-        else
-            holder.icon.setImageDrawable(context.resources.getDrawable(R.drawable.ic_report_harmless_24,context.theme))
+        when (dataSet[position].rating) {
+            context.resources.getString(R.string.level_malicious) -> holder.icon.setImageDrawable(context.resources.getDrawable(R.drawable.ic_report_malicious_24,context.theme))
+            context.resources.getString(R.string.level_suspicious) -> holder.icon.setImageDrawable(context.resources.getDrawable(R.drawable.ic_report_suspicious_24,context.theme))
+            else -> holder.icon.setImageDrawable(context.resources.getDrawable(R.drawable.ic_report_harmless_24,context.theme))
+        }
     }
 
     override fun getItemCount(): Int {
