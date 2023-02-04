@@ -43,6 +43,7 @@ object SMSChecker {
 
 
         val report = Report(sender,text,rating,explanation)
+        //TODO if malicious/suspicious send notification
 
         val jsonString = readFileData(context)
 

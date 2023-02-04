@@ -6,3 +6,4 @@ data class Report(
     var rating : String,
     var explanation : String
 )
+//TODO add parameter of AnalysisReport for diplay in reportsFragment

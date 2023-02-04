@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.File
+//TODO implement clicking individual items
 
 class ReportsFragment : Fragment() {
     private val fileName = "reports.json"

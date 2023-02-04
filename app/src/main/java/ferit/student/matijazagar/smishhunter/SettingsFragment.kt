@@ -9,7 +9,7 @@ import android.widget.ImageButton
 
 
 class SettingsFragment : Fragment() {
-
+    //TODO implement show notification setting, save settings where?
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
