@@ -34,7 +34,8 @@ object SMSChecker {
                 explanation = "Message contains a malicious link."
                 rating = "10/10"
             }
-            else if(analysis.data.attributes.last_analysis_stats.suspicious>=3){
+            else if(analysis.data.attributes.last_analysis_stats.suspicious>=3
+                || analysis.data.attributes.last_analysis_stats.malicious>=1){
                 explanation = "Message contains a suspicious link."
                 rating = "7/10"
             }
@@ -49,7 +50,6 @@ object SMSChecker {
         val reports = ArrayList<Report>()
         reports.add(report)
         reports.addAll(Gson().fromJson<ArrayList<Report>>(jsonString,listReportType))
-
 
 
         var newJsonString = ""
@@ -71,7 +71,9 @@ object SMSChecker {
         val dir = context.getDir(dirName, Context.MODE_PRIVATE)
         val file = File(dir, fileName)
         file.createNewFile()
-         return file.readText()
+        if(file.readText()=="")
+            return "[]"
+        return file.readText()
     }
 
     private fun writeFileData(context: Context, json: String){

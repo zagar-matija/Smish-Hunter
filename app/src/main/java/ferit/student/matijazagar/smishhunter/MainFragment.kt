@@ -63,47 +63,6 @@ class MainFragment : Fragment() {
 
         val encodedString: String = Base64.getEncoder().encodeToString("http://google.com".toByteArray())
         Log.d("base64 encode",encodedString)
-/*
-        try {
-            val client = OkHttpClient()
-
-            //Post request
-            var encodedString: String = Base64.getEncoder().encodeToString("http://google.com".toByteArray())
-            Log.d("base64 encode",encodedString)
-            encodedString=encodedString.trimEnd('=')
-            Log.d("base64 encode clean",encodedString)
-            val mediaType = MediaType.parse("application/x-www-form-urlencoded")
-            val body = RequestBody.create(mediaType, "url=$encodedString")
-            val requestPost = Request.Builder()
-                .url("https://www.virustotal.com/api/v3/urls")
-                .post(body)
-                .addHeader("accept", "application/json")
-                .addHeader("x-apikey", "50267fe591456d7230d9778a4309e85b0d3d8115d6ad0e693f9939367a960979")
-                .addHeader("content-type", "application/x-www-form-urlencoded")
-                .build()
-
-            val responsePost = client.newCall(requestPost).execute()
-
-            Log.d("API Response POST", responsePost.body()!!.string())
-
-       //get request
-            val request = Request.Builder()
-                .url("https://www.virustotal.com/api/v3/urls/"+encodedString)
-                .get()
-                .addHeader("accept", "application/json")
-                .addHeader("x-apikey", "50267fe591456d7230d9778a4309e85b0d3d8115d6ad0e693f9939367a960979")
-                .build()
-
-            val response = client.newCall(request).execute()
-
-
-            Log.d("API response GET", response.body()!!.string());
-
-        }
-        catch(e: java.lang.Exception){
-            Log.d("API", "Failed " + e.printStackTrace())
-        }*/
-
 
         return view
 

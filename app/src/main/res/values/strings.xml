@@ -9,6 +9,7 @@
     <string name="button_check_a_link">Check a link</string>
     <string name="button_about">About</string>
     <string name="button_check_link">Check link</string>
+    <string name="button_delete">Delete all reports</string>
 
     <string name="title_reports">Reports</string>
     <string name="title_settings">Settings</string>

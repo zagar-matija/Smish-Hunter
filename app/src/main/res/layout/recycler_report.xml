@@ -22,7 +22,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewReportTitle" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/reportIcon"
         android:layout_width="51dp"
         android:layout_height="51dp"
         android:layout_marginTop="8dp"
@@ -30,7 +30,7 @@
         android:contentDescription="@string/description_danger_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_error_outline_24" />
+        app:srcCompat="@drawable/ic_report_malicious_24" />
 
     <TextView
         android:id="@+id/textViewReportRating"
@@ -39,7 +39,7 @@
         android:layout_marginTop="15dp"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintEnd_toStartOf="@+id/reportIcon"
         app:layout_constraintStart_toEndOf="@+id/textViewReportContent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
