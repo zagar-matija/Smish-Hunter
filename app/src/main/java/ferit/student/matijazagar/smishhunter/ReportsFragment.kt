@@ -17,7 +17,7 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.File
 //TODO implement clicking individual items
-
+//todo make deleting individual reports possible
 class ReportsFragment : Fragment() {
     private val fileName = "reports.json"
     private val dirName  = "json"

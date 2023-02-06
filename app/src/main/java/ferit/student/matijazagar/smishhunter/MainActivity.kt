@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
+        //todo does not show if asked at once
         requestSmsPermission()
         requestNotificationPermission()
     }
@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         val permission = Manifest.permission.POST_NOTIFICATIONS
         val grant = ContextCompat.checkSelfPermission(this, permission)
         if (grant != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, arrayOf(permission), 100)
+            ActivityCompat.requestPermissions(this, arrayOf(permission), 101)
         }
     }
 }

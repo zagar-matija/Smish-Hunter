@@ -7,6 +7,8 @@ import android.os.Build
 import android.provider.Telephony
 import android.util.Log
 import androidx.annotation.RequiresApi
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 
 class SMSReceiver : BroadcastReceiver() {
@@ -17,7 +19,10 @@ class SMSReceiver : BroadcastReceiver() {
 
         val extractMessages = Telephony.Sms.Intents.getMessagesFromIntent(intent)
         extractMessages.forEach { smsMessage ->
-            SMSChecker.handleSMS(context, smsMessage)}
+            GlobalScope.launch {
+                SMSChecker.handleSMS(context, smsMessage)
+                }
+            }
         extractMessages.forEach { smsMessage ->
             Log.d("SMSReceiver", smsMessage.displayMessageBody)}
 

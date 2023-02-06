@@ -12,13 +12,16 @@ object URLAnalyser {
     fun getLinkAnalysis(url: String) : AnalysisResult{
 
         var analysis = AnalysisResult(Data(
-            Attributes(AnalysisStats(1,40,3,4,5),
-                100,Votes(100, 200),"google.com")))
+            Attributes(AnalysisStats(0,0,0,0,0),
+                0,Votes(0, 0),"placeholder")))
 
         val encodedURL: String = Base64.getEncoder().encodeToString(url.toByteArray()).trimEnd('=')
 
         val request = ServiceBuilder.buildService(AnalysisAPIEndpoints::class.java)
         val call = request.getAnalysis("https://www.virustotal.com/api/v3/urls/$encodedURL")
+
+
+
         val response = call.execute()
         if(response.isSuccessful) {
             Log.d("API-response", "success "+response.message() + response.body().toString())
@@ -38,6 +41,7 @@ object URLAnalyser {
 
         return analysis
     }
+
 
     fun extractURLs(message: String): ArrayList<String> {
         @Suppress("LocalVariableName") val URLs = ArrayList<String>()

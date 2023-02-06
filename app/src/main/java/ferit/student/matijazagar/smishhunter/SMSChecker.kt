@@ -53,7 +53,6 @@ object SMSChecker {
         }
 
         val report = Report(sender,text,rating,explanation)
-        //TODO if malicious/suspicious send notification
 
         if(getPreferenceValue(myPrefAdding,context)=="off"
             && rating==context.resources.getString(R.string.level_harmless))
@@ -76,8 +75,7 @@ object SMSChecker {
 
         var newJsonString = ""
         try{
-            newJsonString = Gson().toJson(reports)
-        }
+            newJsonString = Gson().toJson(reports)}
         catch (e: IOException){
             e.printStackTrace()
         }
