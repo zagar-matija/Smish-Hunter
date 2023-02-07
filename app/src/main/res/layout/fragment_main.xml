@@ -8,32 +8,38 @@
 
     <Button
         android:id="@+id/buttonReports"
-        android:layout_width="303dp"
-        android:layout_height="78dp"
-        android:layout_marginBottom="40dp"
+        android:layout_width="210dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="92dp"
+        android:backgroundTint="@color/gray"
+        android:fontFamily="sans-serif-medium"
         android:text="@string/button_reports"
-        app:layout_constraintBottom_toTopOf="@+id/buttonCheckLink"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/buttonCheckLink"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <Button
         android:id="@+id/buttonCheckLink"
-        android:layout_width="297dp"
-        android:layout_height="77dp"
+        android:layout_width="202dp"
+        android:layout_height="71dp"
+        android:layout_marginBottom="28dp"
+        android:backgroundTint="@color/gray"
         android:text="@string/button_check_a_link"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonAbout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.669" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/buttonAbout"
         android:layout_width="match_parent"
         android:layout_height="71dp"
+        android:backgroundTint="@color/ash"
         android:text="@string/button_about"
+        android:textColor="@color/yellow"
+        android:textSize="20sp"
+        app:iconTint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -41,8 +47,8 @@
 
     <ImageButton
         android:id="@+id/buttonSettingsMain"
-        android:layout_width="50dp"
-        android:layout_height="48dp"
+        android:layout_width="51dp"
+        android:layout_height="56dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:background="#00000000"
@@ -51,7 +57,17 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_settings_24"
+        app:srcCompat="@mipmap/ic_settings_yellow3_foreground"
         tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="311dp"
+        android:layout_height="298dp"
+        android:layout_marginTop="96dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_smishhunter_logo_foreground" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

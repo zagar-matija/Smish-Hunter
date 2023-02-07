@@ -27,14 +27,9 @@
     <string name="level_suspicious">7</string>
     <string name="level_malicious">10</string>
 
-    <string name="about_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus laoreet enim at metus accumsan aliquam. Proin eget sapien sit amet sem elementum imperdiet non in nisi. Nulla pulvinar ex id lorem rutrum ultrices. Nullam bibendum nibh ut nunc mattis convallis. Donec interdum ut erat ac accumsan. Sed imperdiet posuere commodo. Aenean sollicitudin felis et ipsum sollicitudin lacinia. Donec feugiat arcu non mi faucibus consectetur. Morbi aliquam placerat ipsum eu porta. Suspendisse faucibus sed ante eleifend consectetur. Cras eget ex sed velit aliquet pharetra. Sed nibh mi, cursus at quam a, pharetra fermentum neque. Vivamus maximus porttitor mi eget fermentum.
-
-Nulla egestas nisi non tellus tempus ultricies ut nec ex. Nulla ac eros a velit convallis consequat. Mauris rhoncus ut mi nec luctus. Pellentesque rhoncus tincidunt justo, id lobortis dui tempus eu. Donec sed facilisis nulla. Sed nisi enim, convallis ac dignissim eget, interdum non elit. Vivamus cursus, ex in faucibus blandit, ante mauris suscipit sapien, vitae sollicitudin neque eros fermentum odio. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus quam elit, luctus sed sapien nec, vehicula eleifend est. Duis elit metus, iaculis eget urna a, ultrices blandit mauris. Ut cursus sit amet lacus ac vestibulum. Donec molestie lorem sit amet iaculis rutrum. Ut quis metus sodales, blandit quam ac, ultrices erat. Quisque tempor iaculis quam, ut sollicitudin elit lacinia et. Suspendisse vitae commodo ligula.
-
-Praesent consectetur augue metus, scelerisque tincidunt libero accumsan id. Donec tortor arcu, dignissim sed congue id, feugiat vitae magna. Suspendisse egestas molestie magna pulvinar maximus. Vivamus eget volutpat ligula. Nunc eu dictum dolor. Phasellus eget lacus ligula. Maecenas placerat leo risus, non tristique ante aliquam sit amet. Morbi dapibus ligula eget arcu commodo, ut fermentum libero hendrerit. Proin aliquet arcu ac pellentesque tristique. Duis vestibulum ornare consequat.
-
-Nam dictum elit mauris, vel sodales enim tristique varius. Quisque vitae neque vitae lacus tincidunt eleifend ac vel tellus. Donec semper in urna ut consequat. Vivamus at venenatis libero, ac convallis nisi. Duis sodales dictum justo, sit amet pharetra diam vehicula eu. Aliquam lorem ante, mollis sit amet quam at, dapibus placerat dolor. Morbi et elit ligula.
-
-Praesent efficitur orci pharetra mauris rhoncus, id imperdiet ex gravida. In eget imperdiet orci. Morbi interdum, lorem quis ultrices volutpat, augue nisi ullamcorper augue, vel semper quam ipsum vitae quam. Donec et nibh nec risus placerat blandit. Sed tincidunt elit a nulla mattis, sit amet semper mi elementum. Duis condimentum, orci a pretium iaculis, leo odio ullamcorper arcu, ultrices elementum risus quam ac ligula. Suspendisse leo magna, sodales ut placerat ac, ornare quis neque. Nunc eleifend rhoncus finibus. Integer sed aliquet neque. Nullam fringilla nunc quis libero condimentum interdum. Aliquam sit amet gravida purus. Morbi accumsan lorem quis mauris condimentum, gravida pretium mauris auctor. Sed at ante vestibulum, sodales odio cursus, faucibus diam.</string>
+    <string name="about_text">SmishHunter offers great detection rates by utilising the powerful VirusTotal API for its
+        link checking. In this way, we collect data from about 80 reputable detection engines which hold large blacklists of
+        URLs and perform additional checks on the URLs. Using this data we can confidently assert weather an SMS is malicious or
+        not, and act accordingly</string>
 
 </resources>
