@@ -9,24 +9,34 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class ReportsRecyclerAdapter(private val dataSet: ArrayList<Report>, val context: Context)
+class ReportsRecyclerAdapter( val dataSet: ArrayList<Report>, val context: Context)
     : RecyclerView.Adapter<ReportsRecyclerAdapter.ViewHolder>()
     {
+        var onItemClick: ((AnalysisResult) -> Unit)? = null
+        var onLongItemClick: ((Int) -> Unit)? = null
 
-        class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
-        val textViewTitle: TextView
-        val textViewContent: TextView
-        val textViewRating: TextView
-        val icon : ImageView
+        inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+            val textViewTitle: TextView
+            val textViewContent: TextView
+            val textViewRating: TextView
+            val icon: ImageView
 
-        init {
-            textViewTitle = view.findViewById(R.id.textViewReportTitle)
-            textViewContent = view.findViewById(R.id.textViewReportContent)
-            textViewRating = view.findViewById(R.id.textViewReportRating)
-            icon = view.findViewById(R.id.reportIcon)
+            init {
+                textViewTitle = view.findViewById(R.id.textViewReportTitle)
+                textViewContent = view.findViewById(R.id.textViewReportContent)
+                textViewRating = view.findViewById(R.id.textViewReportRating)
+                icon = view.findViewById(R.id.reportIcon)
+
+                view.setOnClickListener {
+                    onItemClick?.invoke(dataSet[adapterPosition].analysisResult)
+                }
+                view.setOnLongClickListener {
+                    onLongItemClick?.invoke(adapterPosition)
+                    return@setOnLongClickListener true
+                }
+
+            }
         }
-    }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.recycler_report, parent, false)
@@ -36,7 +46,6 @@ class ReportsRecyclerAdapter(private val dataSet: ArrayList<Report>, val context
 
     @SuppressLint("UseCompatLoadingForDrawables", "SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
         holder.textViewTitle.text = dataSet[position].sender
         holder.textViewContent.text = dataSet[position].content
         holder.textViewRating.text = "${dataSet[position].rating}/10"

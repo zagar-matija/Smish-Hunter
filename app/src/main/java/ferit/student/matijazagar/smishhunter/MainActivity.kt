@@ -15,25 +15,25 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //todo does not show if asked at once
-        requestSmsPermission()
-        requestNotificationPermission()
-    }
-
-    private fun requestSmsPermission() {
-        val permission = Manifest.permission.RECEIVE_SMS
-        val grant = ContextCompat.checkSelfPermission(this, permission)
-        if (grant != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, arrayOf(permission), 100)
-        }
+        requestPermissions()
     }
 
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
-    private fun requestNotificationPermission() {
-        val permission = Manifest.permission.POST_NOTIFICATIONS
-        val grant = ContextCompat.checkSelfPermission(this, permission)
+    private fun requestPermissions() {
+        val permissions = ArrayList<String>()
+
+
+        var grant = ContextCompat.checkSelfPermission(this, Manifest.permission.RECEIVE_SMS )
         if (grant != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, arrayOf(permission), 101)
+            permissions.add(Manifest.permission.RECEIVE_SMS)
         }
+        grant = ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS)
+        if (grant != PackageManager.PERMISSION_GRANTED) {
+            permissions.add(Manifest.permission.POST_NOTIFICATIONS)
+           }
+
+        if(permissions.isNotEmpty())
+            ActivityCompat.requestPermissions(this, permissions.toArray(arrayOf()), 99)
     }
+
 }

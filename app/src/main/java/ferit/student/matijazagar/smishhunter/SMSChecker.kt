@@ -35,6 +35,9 @@ object SMSChecker {
         val sender = sms.originatingAddress
         var rating = context.resources.getString(R.string.level_harmless)
         var explanation = "Harmless message"
+        var analysisResult = AnalysisResult(Data(
+            Attributes(AnalysisStats(0,0,0,0,0),
+                0,Votes(0, 0),"No link analysed.")))
 
         val links = URLAnalyser.extractURLs(sms.displayMessageBody)
 
@@ -42,17 +45,19 @@ object SMSChecker {
             val analysis = URLAnalyser.getLinkAnalysis(it)
 
             if(analysis.data.attributes.last_analysis_stats.malicious>=3){
+                analysisResult = analysis
                 explanation = "Message contains a malicious link."
                 rating = context.resources.getString(R.string.level_malicious)
             }
             else if(analysis.data.attributes.last_analysis_stats.suspicious>=3
                 || analysis.data.attributes.last_analysis_stats.malicious>=1){
+                analysisResult=analysis
                 explanation = "Message contains a suspicious link."
                 rating = context.resources.getString(R.string.level_suspicious)
             }
         }
 
-        val report = Report(sender,text,rating,explanation)
+        val report = Report(sender,text,rating,explanation, analysisResult)
 
         if(getPreferenceValue(myPrefAdding,context)=="off"
             && rating==context.resources.getString(R.string.level_harmless))
@@ -73,14 +78,9 @@ object SMSChecker {
         reports.addAll(Gson().fromJson<ArrayList<Report>>(jsonString,listReportType))
 
 
-        var newJsonString = ""
-        try{
-            newJsonString = Gson().toJson(reports)}
-        catch (e: IOException){
-            e.printStackTrace()
-        }
 
-        writeFileData(context,newJsonString)
+
+        writeFileData(context,reports)
 
 
     }
@@ -94,11 +94,19 @@ object SMSChecker {
         return file.readText()
     }
 
-    private fun writeFileData(context: Context, json: String){
+    private fun writeFileData(context: Context, reports: ArrayList<Report>){
         val dir = context.getDir(dirName, Context.MODE_PRIVATE)
         val file = File(dir, fileName)
+
+        var newJsonString = ""
+        try{
+            newJsonString = Gson().toJson(reports)}
+        catch (e: IOException){
+            e.printStackTrace()
+        }
+
         file.createNewFile()
-        file.outputStream().write(json.toByteArray())
+        file.outputStream().write(newJsonString.toByteArray())
     }
 
     private fun getPreferenceValue(preference: String, context: Context ): String? {
